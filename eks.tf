@@ -3,7 +3,7 @@ module "eks" {
   version = "~> 21.0"
 
   name               = "${var.environment}-eks-cluster"
-  kubernetes_version = "1.33" # Modern supported Kubernetes version
+  kubernetes_version = "1.34" # Modern supported Kubernetes version
 
   # EKS Cluster Endpoint Access Configuration
   endpoint_public_access  = true
@@ -35,8 +35,8 @@ module "eks" {
       max_size     = 3
       desired_size = 2
 
-      # Cost-effective ARM-based Graviton instances for Dev workloads
-      instance_types = ["t4g.medium"]
+      # Cost-effective ARM-based Graviton instances for Dev workloads, diversification added in case of spot interruptions
+      instance_types = ["t4g.medium", "t4g.large", "c7g.medium", "m7g.medium"]
       capacity_type  = "SPOT" # Uses AWS Spot instances to reduce costs in DEV
 
       labels = {

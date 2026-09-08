@@ -7,7 +7,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 6.0"
 
-  name = "${var.environment}-vpc"
+  name = "task-api-${var.environment}-vpc"
   cidr = var.vpc_cidr
 
   # Dynamically pick the first 2 AZs available in the region

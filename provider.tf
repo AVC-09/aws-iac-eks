@@ -25,7 +25,7 @@ provider "aws" {
     tags = {
       Environment = var.environment
       ManagedBy   = "Terraform"
-      Project     = "CloudDevOps-Demo"
+      Project     = "task-api-${var.environment}"
     }
   }
 }
