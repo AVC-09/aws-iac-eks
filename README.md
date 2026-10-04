@@ -57,7 +57,7 @@ The infrastructure provisions a secure, highly available, and auto-scaling Kuber
 
 ## 📁 Repository Structure
 
-
+```text
 ├── provider.tf             # AWS and S3-Backend
 ├── main.tf                 # Multi-AZ VPC with public, private, and DB subnets
 ├── elasticache.tf          # ElastiCache Redis security group, subnet group and cluster
@@ -69,7 +69,7 @@ The infrastructure provisions a secure, highly available, and auto-scaling Kuber
 ├── metrics_server_helm.tf  # Metrics Server Helm release for HPA
 ├── variables.tf            # Input configuration variables
 └── outputs.tf              # Cluster endpoints, VPC IDs, and Redis endpoints
-
+```
  
 ---
 
