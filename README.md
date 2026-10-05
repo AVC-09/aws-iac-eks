@@ -6,6 +6,8 @@ Production-ready infrastructure provisioning on AWS using **Terraform** and **He
 
 The infrastructure provisions a secure, highly available, and auto-scaling Kubernetes environment designed for microservices workloads.
 
+![AWS EKS Infrastructure Architecture](images/aws_iac_eks.png)
+
 ### 1. Compute & Cluster Layer
 - **Amazon EKS (v1.34):** Fully managed Kubernetes control plane.
 - **AWS Graviton Nodes (`m7g`/`c7g`):** Worker nodes running on ARM64 architecture for high price-performance efficiency.
