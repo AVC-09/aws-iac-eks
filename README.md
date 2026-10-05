@@ -25,8 +25,6 @@ The infrastructure provisions a secure, highly available, and auto-scaling Kuber
 - **Kubernetes Metrics Server:** Deployed via Helm to scrape pod resource utilization.
 - **Horizontal Pod Autoscaler (HPA):** Dynamically scales application workloads based on real-time CPU consumption.
 
----
-
 ## ⚖️ Design Decisions & Trade-offs
 
 ### 1. Compute Architecture: AWS Graviton (ARM64)
@@ -53,7 +51,7 @@ The infrastructure provisions a secure, highly available, and auto-scaling Kuber
 - **Choice:** Automated Helm releases for AWS Load Balancer Controller and Metrics Server inside Terraform.
 - **Advantages:** Complete end-to-end infrastructure provisioning in a single `terraform apply` step.
 - **Trade-offs & Mitigations:** Increases initial `terraform apply` execution duration while Terraform waits for cluster deployments to reach a `Ready` state.
----
+
 
 ## 📁 Repository Structure
 
@@ -70,8 +68,6 @@ The infrastructure provisions a secure, highly available, and auto-scaling Kuber
 ├── variables.tf            # Input configuration variables
 └── outputs.tf              # Cluster endpoints, VPC IDs, and Redis endpoints
 ```
- 
----
 
 ## 🛠️ Prerequisites & Local Setup
 
