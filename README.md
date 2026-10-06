@@ -1,6 +1,6 @@
 # Task & Metrics API — Infrastructure (IaC)
 
-Production-ready infrastructure provisioning on AWS using **Terraform** and **Helm**.
+Production-capable infrastructure provisioning on AWS using **Terraform** and **Helm**.
 
 ## 🏗️ Architecture Overview
 
@@ -21,7 +21,6 @@ The infrastructure provisions a secure, highly available, and auto-scaling Kuber
 ### 3. Persistence & Security
 - **Amazon ElastiCache for Redis:** Managed Redis cluster provisioned inside private database subnets.
 - **OIDC & IRSA (IAM Roles for Service Accounts):** Fine-grained, least-privilege IAM policies bound directly to Kubernetes Service Accounts.
-- **IMDSv2 Enforcement:** Enforced token-based metadata access with a hop limit set to 2 for secure containerized operations.
 
 ### 4. Observability & Autoscaling
 - **Kubernetes Metrics Server:** Deployed via Helm to scrape pod resource utilization.
@@ -42,7 +41,7 @@ The infrastructure provisions a secure, highly available, and auto-scaling Kuber
 ### 3. Ingress Routing: `target-type: ip`
 - **Choice:** Configured ALB Target Groups to route directly to Pod IP addresses instead of EC2 NodePorts (`instance` mode).
 - **Advantages:** Lower network latency, eliminates `kube-proxy` NAT overhead, and ensures balanced request distribution across individual pods.
-- **Trade-offs & Mitigations:** Consumes VPC IP addresses from the private subnet pool. Mitigated by sizing VPC subnets with adequate CIDR masks (e.g., `/20` or `/18`).
+- **Trade-offs & Mitigations:** Consumes VPC IP addresses from the private subnet pool. Mitigated by sizing VPC subnets with adequate CIDR masks (e.g., `/20` or `/18`, eventhough `/24` was used for dev/test purposes).
 
 ### 4. Authentication: OIDC & IRSA
 - **Choice:** Used IAM Roles for Service Accounts for both AWS Load Balancer Controller and application components.
