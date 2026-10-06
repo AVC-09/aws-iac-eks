@@ -2,6 +2,8 @@
 
 Production-capable infrastructure provisioning on AWS using **Terraform** and **Helm**.
 
+> ℹ️ **API\`s code:** The API\`s code is managed in the [Task & Metrics API](https://github.com/AVC-09/task-metrics-api) repository.
+
 ## 🏗️ Architecture Overview
 
 The infrastructure provisions a secure, highly available, and auto-scaling Kubernetes environment designed for microservices workloads.
